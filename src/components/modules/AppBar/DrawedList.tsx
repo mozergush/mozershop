@@ -44,8 +44,7 @@ export default function DrawedList({
   const locale = useLocale() as Locale
   const router = useRouter()
 
-  function handleLocaleChange(event: React.MouseEvent<HTMLElement>,
-    newLanguage: string): void {
+  function handleLocaleChange(event: React.MouseEvent<HTMLElement>, newLanguage: string): void {
     document.cookie = `NEXT_LOCALE=${newLanguage}; path=/; max-age=31536000; SameSite=Lax`
     router.refresh()
   }
