@@ -152,8 +152,8 @@ export default function ShopClient({
     replace(`${pathname}?${params.toString()}`)
   }
 
-  const handlePrice = (val:string) => {
-    setPrice(JSON.parse(val))
+  const handlePrice = (val:number[]) => {
+    setPrice(val)
     const params = new URLSearchParams(window.location.search)
 
     if (val && val.toString() != [0, 1000].toString()) {
@@ -372,7 +372,7 @@ export default function ShopClient({
                       onChange={(e: Event) => {
                         const target = e.target as HTMLInputElement
                         if (target) {
-                          handlePrice(target.value)
+                          handlePrice(target.value as unknown as number[])
                         }
                       }}
                       valueLabelDisplay="auto"
@@ -511,7 +511,7 @@ export default function ShopClient({
                               onChange={(e: Event) => {
                                 const target = e.target as HTMLInputElement
                                 if (target) {
-                                  handlePrice(target.value)
+                                  handlePrice(target.value as unknown as number[])
                                 }
                               }}
                               valueLabelDisplay="auto"
