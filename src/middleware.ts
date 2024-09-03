@@ -12,7 +12,7 @@ export function middleware(req: NextRequest) {
   const locale = req.cookies.get('NEXT_LOCALE')?.value
   const acceptLanguage = req.headers.get('accept-language')?.split(',')[0]
 
-  if (!locale && acceptLanguage === 'ru-RU') {
+  if (!locale && (acceptLanguage === 'ru-RU' || acceptLanguage === 'ru')) {
     // Get the remaining part of the URL after the domain
     const path = req.nextUrl.pathname + req.nextUrl.search
 
