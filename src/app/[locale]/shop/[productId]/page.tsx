@@ -36,6 +36,7 @@ export default async function Product({ params : { productId, locale } }:
   const crossales: IProduct[] | false = crossalesData.error ? false : crossalesData.data
 
   return (
+
     <main>
       <Box sx={{ paddingBottom: '40px' }}>
         <Container
@@ -53,6 +54,7 @@ export default async function Product({ params : { productId, locale } }:
               <Box className={'product-slider-container'}
               >
                 <Box
+                  className={'product-image-sizes'}
                   sx={{
                     width: '100%',
                     position: 'relative',

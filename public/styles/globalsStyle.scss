@@ -347,6 +347,16 @@ a{
 .product-slider-container{
   overflow: hidden;
 
+  .product-image-sizes{
+    height: 450px;
+    @media screen and (max-width: 900px){
+      height: 300px;
+    }
+    @media screen and (max-width: 768px){
+      height: 400px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     height: 100%;
 
