@@ -7,6 +7,10 @@ const bundleAnalyzer = withBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
 });
 
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        minimumCacheTTL: 3600,
+    },
+};
 
 export default nextIntlConfig(bundleAnalyzer(nextConfig));
