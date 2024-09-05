@@ -65,11 +65,10 @@ export default async function Product({ params : { productId, locale } }:
                 >
                   {product.images?.[0] && product.name && (
                     <Image
-                      className={'image-container'}
+                      className={'image-container global-object-fit'}
                       src={product.images[0]}
                       alt={product.name}
                       fill={true}
-                      style={{ objectFit: 'cover' }}
                     />
                   )}
                 </Box>

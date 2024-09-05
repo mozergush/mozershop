@@ -171,7 +171,7 @@ export default function Cart({
                                   fill
                                   src={product?.images ? product.images[0] : ''}
                                   alt={product?.name ? product.name : 'Product'}
-                                  objectFit={'cover'}
+                                  className={'global-object-fit'}
                                 />
                               </Box>
                             </Grid>

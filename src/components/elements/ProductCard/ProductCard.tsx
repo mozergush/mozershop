@@ -104,7 +104,7 @@ export default function ProductCard({
                   fill
                   src={imgLink}
                   alt={'Comix Title'}
-                  objectFit={'cover'}
+                  className={'global-object-fit'}
                 />
               </Box>
             </Link>
