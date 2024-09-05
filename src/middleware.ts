@@ -1,6 +1,6 @@
 import { type Locale, locales } from 'public/locales/locales'
 import createMiddleware from 'next-intl/middleware'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 
 const nextIntlMiddleware = createMiddleware({
   locales,
@@ -8,23 +8,13 @@ const nextIntlMiddleware = createMiddleware({
   localePrefix: 'never',
 })
 
-export function middleware(req: NextRequest) {
-  const locale = req.cookies.get('NEXT_LOCALE')?.value
-  const acceptLanguage = req.headers.get('accept-language')?.split(',')[0]
+export function middleware(request: NextRequest) {
+  request.headers.set('accept-language', 'en-US,en;q=0.9')
 
-  if (!locale && (acceptLanguage === 'ru-RU' || acceptLanguage === 'ru')) {
-    // Get the remaining part of the URL after the domain
-    const path = req.nextUrl.pathname + req.nextUrl.search
+  // Выполняем логику из nextIntlMiddleware
+  const response = nextIntlMiddleware(request)
 
-    // Construct a new URL with /en before the remaining path
-    const redirectUrl = new URL(`/en${path}`, req.url)
-
-    const response = NextResponse.redirect(redirectUrl)
-    response.cookies.set('NEXT_LOCALE', 'en', { path: '/' })
-    return response
-  }
-
-  return nextIntlMiddleware(req)
+  return response
 }
 
 export const config = {

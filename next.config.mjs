@@ -9,7 +9,21 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig = {
     images: {
-        minimumCacheTTL: 3600,
+        minimumCacheTTL: 31536000,
+    },
+    async headers() {
+        return [
+            {
+                // Настройка заголовков для всех оптимизированных изображений
+                source: "/_next/image",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "public, max-age=31536000, immutable", // Пример: кэшировать на 1 год
+                    },
+                ],
+            },
+        ];
     },
 };
 

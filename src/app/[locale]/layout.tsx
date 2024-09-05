@@ -34,20 +34,19 @@ export default async function RootLayout({
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"/>
     </head>
     <body>
-    <AppRouterCacheProvider options={{enableCssLayer: true}}>
-        <ThemeProvider theme={theme}>
-            <CssBaseline/>
-            <SpeedInsights/>
+        <AppRouterCacheProvider options={{enableCssLayer: true}}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <SpeedInsights/>
 
-            <NextIntlClientProvider messages={messages}>
-                <Layout>
-                    {children}
-                </Layout>
-            </NextIntlClientProvider>
-
-          </ThemeProvider>
+                <NextIntlClientProvider messages={messages}>
+                    <Layout>
+                        {children}
+                    </Layout>
+                </NextIntlClientProvider>
+            </ThemeProvider>
         </AppRouterCacheProvider>
-      </body>
+    </body>
     </html>
   )
 }
