@@ -7,7 +7,6 @@ import { Box } from '@mui/system'
 import Link from 'next/link'
 import { IProduct } from '@/types/common'
 import { Tilt } from 'react-tilt'
-import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 
 const defaultOptions = {
@@ -100,8 +99,7 @@ export default function ProductCard({
                   overflow: 'hidden',
                 }}
               >
-                <Image
-                  fill
+                <img
                   src={imgLink}
                   alt={'Comix Title'}
                   className={'global-object-fit'}

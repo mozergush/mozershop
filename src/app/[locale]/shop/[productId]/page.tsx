@@ -5,7 +5,6 @@ import { IProduct } from '@/types/common'
 import NavBreadcrumbs from '@/components/elements/NavBreadcrumbs/NavBreadcrumbs'
 import { getComics, getOneComics } from '@/actions/server'
 import Grid from '@mui/material/Unstable_Grid2'
-import Image from 'next/image'
 import { ProductsSlider } from '@/components/elements/ProductsSlider/ProductsSlider'
 import Card from '@mui/material/Card'
 import { redirect } from 'next/navigation'
@@ -64,11 +63,10 @@ export default async function Product({ params : { productId, locale } }:
                   }}
                 >
                   {product.images?.[0] && product.name && (
-                    <Image
+                    <img
                       className={'image-container global-object-fit'}
                       src={product.images[0]}
                       alt={product.name}
-                      fill={true}
                     />
                   )}
                 </Box>

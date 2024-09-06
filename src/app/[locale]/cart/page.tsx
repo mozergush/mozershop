@@ -15,7 +15,6 @@ import AddIcon from '@mui/icons-material/Add'
 import DeleteIcon from '@mui/icons-material/Delete'
 import RemoveIcon from '@mui/icons-material/Remove'
 import { IProduct } from '@/types/common'
-import Image from 'next/image'
 import Link from 'next/link'
 import animationData from 'public/img/lottie6.json'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -119,7 +118,7 @@ export default function Cart({
             {t('cart')}
           </Typography>
 
-          {!isEmpty(cart) && (
+          {(!isEmpty(cart) || spinner) && (
             <Grid
               container
               spacing={4}
@@ -137,7 +136,7 @@ export default function Cart({
               >
                 {spinner && (
                   <>
-                    {Object.keys(cart).map((key) => (
+                    {Object.keys(cart && !isEmpty(cart) ? cart : [1]).map((key) => (
                       <Skeleton key={key} height={100} variant="rounded" />
                     ))}
                   </>
@@ -167,8 +166,7 @@ export default function Cart({
                                   overflow: 'hidden',
                                 }}
                               >
-                                <Image
-                                  fill
+                                <img
                                   src={product?.images ? product.images[0] : ''}
                                   alt={product?.name ? product.name : 'Product'}
                                   className={'global-object-fit'}
@@ -323,7 +321,7 @@ export default function Cart({
             </Grid>
           )}
 
-          {isEmpty(cart) && (
+          {(isEmpty(cart) && !spinner) && (
             <Box>
               <LottieContainer
                 height={isMobile ? '175px' : '255px'}

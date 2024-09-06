@@ -14,12 +14,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                // Настройка заголовков для всех оптимизированных изображений
-                source: "/_next/image",
+                source: '/img/:path*',
                 headers: [
                     {
-                        key: "Cache-Control",
-                        value: "public, max-age=31536000, immutable", // Пример: кэшировать на 1 год
+                        key: 'Cache-Control',
+                        value: 'public, max-age=31536000, immutable',
                     },
                 ],
             },

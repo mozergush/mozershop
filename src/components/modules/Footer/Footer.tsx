@@ -3,7 +3,6 @@ import { Box } from '@mui/system'
 import { Container } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import * as React from 'react'
-import Image from 'next/image'
 import MaterialLink from '@/components/elements/MaterialLink/MaterialLink'
 import MySnackbar from "@/components/elements/MySnackbar/MySnackbar";
 import { getTranslations } from "next-intl/server";
@@ -49,7 +48,7 @@ const Footer = async ({locale}:{locale?: string}) => {
                   {t('cookies')}
               </Typography>
 
-              <Image
+              <img
                 src={'/img/footerdecor.svg'}
                 alt={'footer decor'}
                 width="200"
@@ -57,7 +56,7 @@ const Footer = async ({locale}:{locale?: string}) => {
               />
             </Box>
 
-            <Image
+            <img
               src={'/img/mozerlogo.svg'}
               alt={'footer decor'}
               width="175"
