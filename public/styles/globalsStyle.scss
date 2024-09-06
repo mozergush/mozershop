@@ -516,3 +516,17 @@ a{
   width: 100%;
   height: 100%
 }
+
+.progress-bar-container{
+  position: fixed !important;
+
+  #nprogress {
+    .bar{
+      background: #1A1014;
+      position: absolute;
+      top: unset;
+      bottom: 0;
+      overflow: hidden;
+    }
+  }
+}

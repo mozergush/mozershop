@@ -24,6 +24,7 @@ import Link from 'next/link'
 import { useCart } from '@/context/cart'
 import { Box } from '@mui/material'
 import { useTranslations } from 'use-intl'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 
 export default function MenuAppBar() {
   const [drawerOpen, setDrawer] = React.useState(false)
@@ -35,8 +36,7 @@ export default function MenuAppBar() {
   const { cart } = useCart()
 
   const totalItems = Object.values(cart).reduce(
-    (acc, quantity) => acc + quantity,
-    0
+    (acc, quantity) => acc + quantity, 0
   )
 
   const {
@@ -128,7 +128,7 @@ export default function MenuAppBar() {
 
   return (
     <header>
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={'progress-bar-container'}>
         <Toolbar>
           <IconButton
             size="large"
@@ -275,6 +275,8 @@ export default function MenuAppBar() {
             )}
           </div>
         </Toolbar>
+
+        <ProgressBar options={{ parent: '.progress-bar-container', showSpinner: false }} />
       </AppBar>
 
       <DrawedList
