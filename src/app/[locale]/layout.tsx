@@ -31,7 +31,6 @@ export default async function RootLayout({
     <html lang={locale}>
     <head>
         <link rel="icon" href="/favicon.ico" sizes="any"/>
-        <script src="/libs/three.min.js"/>
     </head>
     <body>
         <AppRouterCacheProvider options={{enableCssLayer: true}}>

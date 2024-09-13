@@ -1,6 +1,7 @@
 'use client'
 /* eslint-disable */
 import React, { useState, useEffect, useRef } from 'react'
+import * as THREE from 'three'
 import FOG from 'vanta/dist/vanta.fog.min'
 
 export default function VantaBackground() {
@@ -21,7 +22,8 @@ export default function VantaBackground() {
         baseColor: 0xf5f5ff,
         blurFactor: 0.54,
         speed: 1.70,
-        zoom: 0.80
+        zoom: 0.80,
+        THREE: THREE,
       }))
     }
     return () => {
