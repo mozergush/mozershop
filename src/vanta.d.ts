@@ -1,6 +1,4 @@
 declare module 'vanta/dist/vanta.fog.min' {
-    import * as THREE from 'three'
-
     interface VantaOptions {
         el: HTMLElement | null;
         mouseControls?: boolean;
@@ -17,7 +15,6 @@ declare module 'vanta/dist/vanta.fog.min' {
         blurFactor?: number;
         speed?: number;
         zoom?: number;
-        THREE?: typeof THREE;
         // добавьте другие опции, если они есть
     }
 
