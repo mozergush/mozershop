@@ -79,5 +79,6 @@
   "bestsellers": "Más vendidos",
   "something_went_wrong": "Algo salió mal. Inténtalo de nuevo",
   "contacts_text": "Esta es mi tienda de prueba NextJS",
-  "contacts_subtext": "Si quieres contactarme, escribe en mi"
+  "contacts_subtext": "Si quieres contactarme, escribe en mi",
+  "or": "o"
 }
