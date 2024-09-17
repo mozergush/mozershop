@@ -530,3 +530,28 @@ a{
     }
   }
 }
+
+.login-or{
+  font-size: 14px;
+  width: fit-content;
+  margin: 10px auto 0;
+  position: relative;
+  &:before{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 10px);
+  }
+  &:after{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+  }
+}

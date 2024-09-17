@@ -86,6 +86,10 @@ export default function RegisterPopup({
                 {t('registration_text')}
               </DialogContentText>
 
+              <Box sx={{ padding: '0 0 0px' }}>
+                <OAuthModule handleClose={handleClose} />
+              </Box>
+
               <TextField
                 required
                 margin="dense"
@@ -136,8 +140,6 @@ export default function RegisterPopup({
                   {t('login')}
                 </Link>
               </FormHelperText>
-
-              <OAuthModule handleClose={handleClose} />
             </DialogContent>
 
             <DialogActions>

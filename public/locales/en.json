@@ -79,5 +79,6 @@
   "bestsellers": "Bestsellers",
   "something_went_wrong": "Something went wrong. Try again",
   "contacts_text": "This is my NextJS test store",
-  "contacts_subtext": "If you want to contact me, write on my"
+  "contacts_subtext": "If you want to contact me, write on my",
+  "or": "or"
 }

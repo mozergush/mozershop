@@ -5,6 +5,8 @@ import { useSnackbar } from '@/context/snackbar'
 import { useAuth } from '@/context/auth'
 import { Button } from '@mui/material'
 import { useTranslations } from 'use-intl'
+import GoogleIcon from '@mui/icons-material/Google'
+import Typography from '@mui/material/Typography'
 
 export default function OAuthModule({
   handleClose,
@@ -87,12 +89,15 @@ export default function OAuthModule({
   return (
     <>
       <Button
-        variant="contained"
-        sx={{ width: '100%', marginTop: '5px' }}
+        variant="outlined"
+        sx={{ width: '100%', marginTop: '10px', fontSize: '12px' }}
         onClick={handleGoogleLogin}
+        size="large"
       >
-        {t('connect_with_oauth')}
+        <GoogleIcon sx={{ marginRight: '8px' }} />{t('connect_with_oauth')}
       </Button>
+
+      <Typography className={'login-or'}>{t('or')}</Typography>
     </>
   )
 }
