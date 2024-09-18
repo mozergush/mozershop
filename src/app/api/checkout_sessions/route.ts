@@ -46,8 +46,8 @@ export async function POST(request: Request) {
       line_items,
       customer: customer.id,
       mode: 'payment',
-      success_url: `https://mozershop-v2.vercel.app/success`,
-      cancel_url: `https://mozershop-v2.vercel.app/cart?status=canceled`,
+      success_url: `https://mozershop.vercel.app/success`,
+      cancel_url: `https://mozershop.vercel.app/cart?status=canceled`,
       shipping_address_collection: {
         allowed_countries: ['US'],
       },

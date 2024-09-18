@@ -48,6 +48,7 @@ export default function Cart({
   const { cart, addProduct, removeProduct, deleteProduct } = useCart()
   const [products, setProducts] = useState<IProduct[]>([])
   const [spinner, setSpinner] = useState(true)
+  const [firstload, setFirstload] = useState(true)
   const [total, setTotal] = useState(0)
   const isMobile = useMediaQuery('(max-width:768px)')
   const { handleSnackbarOpen } = useSnackbar()
@@ -61,6 +62,8 @@ export default function Cart({
     try {
       const cartIds = Object.keys(cart)
 
+      setSpinner(true)
+
       const request = await getComics({
         include: cartIds,
       })
@@ -68,17 +71,7 @@ export default function Cart({
       const productsData = JSON.parse(request).data
       setProducts(productsData)
 
-      // Рассчитываем общую стоимость
-      const price = productsData.reduce((acc: number, product: IProduct) => {
-        const productAmount = cart[product._id] || 0
-        return acc + product.price * productAmount
-      }, 0)
-
-      setTotal(price)
-
-      if (price > 0) {
-        setSpinner(false)
-      }
+      setSpinner(false)
     } catch (error) {
       console.error('Failed to fetch', error)
     }
@@ -90,9 +83,27 @@ export default function Cart({
 
   useEffect(() => {
     if (!isEmpty(cart)) {
-      fetchProducts(cart)
+      if (firstload){
+        fetchProducts(cart)
+
+        setFirstload(false)
+      }
+
+      let price = 0
+
+      if (products.length > 0){
+        for (const key in cart){
+          const tmp_price = products.find((product) => product._id == key)?.price ?? 0
+
+          price += cart[key] * tmp_price
+        }
+
+        setTotal(price)
+      }
+    } else {
+      setSpinner(false)
     }
-  }, [cart])
+  }, [cart, products])
 
   useEffect(() => {
     if (searchParams?.status == 'canceled') {
