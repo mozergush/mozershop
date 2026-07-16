@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "latest",
-    "@mui/material": "latest",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.5",
+    "@mui/material": "^5.16.5",
     "@mui/material-nextjs": "^5.16.4",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@vercel/speed-insights": "^1.0.12",
@@ -24,7 +24,7 @@
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
     "mongodb": "^6.8.0",
-    "next": "latest",
+    "next": "^14.2.5",
     "next-intl": "^3.19.0",
     "next-nprogress-bar": "^2.3.13",
     "nodemailer": "^6.9.14",
@@ -44,13 +44,13 @@
     "@next/bundle-analyzer": "^14.2.7",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "typescript": "latest"
+    "typescript": "^5.5.4"
   }
 }
